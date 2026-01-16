@@ -1,6 +1,7 @@
 import { ArrowDown, Zap, Leaf, Award } from "lucide-react";
 import logo from "@/assets/logo.png";
 
+
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center bg-muted overflow-hidden">
