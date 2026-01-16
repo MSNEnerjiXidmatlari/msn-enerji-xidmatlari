@@ -19,10 +19,24 @@ const Footer = () => {
             </span>
           </div>
 
-          {/* Copyright */}
-          <p className="text-primary-foreground/70 text-sm">
-            © {currentYear} MSN Enerji Xidmətləri MMC. Bütün hüquqlar qorunur.
-          </p>
+          {/* Copyright & Attribution */}
+          <div className="text-center md:text-right">
+            <p className="text-primary-foreground/70 text-sm">
+              © {currentYear} MSN Enerji Xidmətləri MMC. Bütün hüquqlar qorunur.
+            </p>
+            <p className="text-primary-foreground/70 text-sm"></p>
+            <p className="text-primary-foreground/60 text-xs mt-1">
+              Vibe coded by{" "}
+              <a
+                href="https://www.linkedin.com/in/tarlanomarbayli/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-primary-foreground transition-colors"
+              >
+                Tarlan
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
