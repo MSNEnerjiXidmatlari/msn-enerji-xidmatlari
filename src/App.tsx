@@ -12,7 +12,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       {/* Set basename to your GitHub repo path */}
-      <BrowserRouter basename="/msn-enerji-xidmatlari">
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* Add other pages here if you create them later */}
