@@ -25,6 +25,10 @@ const HeroSection = () => {
               <span className="gradient-text">Gələcək</span> üçün
             </h1>
 
+            <p className="text-xl text-foreground font-medium mb-8 max-w-xl leading-relaxed">
+              Texnoloji yenilik, qabaqcıl həllər və enerjidə mükəmməllik MSN Enerji Xidmətləri MMC-də!
+            </p>
+
             <p className="text-lg text-muted-foreground mb-4 max-w-xl leading-relaxed">
               "MSN Enerji Xidmətləri MMC" enerji səmərəlilik sektorunda enerji auditoruna
               tələbin formalaşması ilə əlaqədar 20.12.2024-cü il tarixində təsis edilmişdir.

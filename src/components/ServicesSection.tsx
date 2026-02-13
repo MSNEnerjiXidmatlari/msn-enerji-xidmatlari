@@ -1,22 +1,24 @@
-import { Building2, Factory, FileSearch, BarChart3, Lightbulb, Settings } from "lucide-react";
+/* import { Building2, Factory, FileSearch, BarChart3, Lightbulb, Settings } from "lucide-react";
+*/
+import { ShieldCheck, Power, BatteryCharging } from "lucide-react";
 
 const services = [
   {
-    icon: Building2,
-    title: "Bina Enerji Auditi",
-    description: "Yaşayış və kommersiya binalarının enerji istehlakının qiymətləndirilməsi",
+    icon: ShieldCheck,
+    title: "Elektrik təhlükəsizliyi",
+    description: "Elektrik sistemlərinin təhlükəsizlik yoxlanışı və həllərin tapılmasına dəstək",
   },
   {
-    icon: Factory,
-    title: "Sənaye Auditi",
-    description: "Sənaye müəssisələri üçün enerji səmərəliliyi təhlili",
+    icon: Power,
+    title: "Güc faktoru",
+    description: " Lokal elektrik şəbəkələrində güc faktorunun yoxlanışı və optimal avadanlıq seçiminə dəstək",
   },
   {
-    icon: FileSearch,
-    title: "Enerji Sertifikatlaşdırma",
-    description: "Enerji performans sertifikatlarının hazırlanması",
+    icon: BatteryCharging,
+    title: "Performans yoxlanışı",
+    description: "Akkumulyator-batareya sistemlərində performansın yoxlanılması",
   },
-  {
+ /* {
     icon: BarChart3,
     title: "Enerji Hesabatları",
     description: "Detallı enerji istehlakı hesabatları və təkliflər",
@@ -31,6 +33,7 @@ const services = [
     title: "Texniki Məsləhət",
     description: "Enerji sistemlərinin optimallaşdırılması üzrə məsləhət",
   },
+  */
 ];
 
 const ServicesSection = () => {
