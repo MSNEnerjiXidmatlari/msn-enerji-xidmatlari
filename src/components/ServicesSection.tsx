@@ -1,6 +1,36 @@
-import { ShieldCheck, Power, BatteryCharging } from "lucide-react";
+import { ShieldCheck, Power, BatteryCharging, Building2, Factory, FileSearch, BarChart3, Lightbulb, Settings } from "lucide-react";
 
 const services = [
+  {
+    icon: Building2,
+    title: "Bina Enerji Auditi",
+    description: "Yaşayış və kommersiya binalarının enerji istehlakının qiymətləndirilməsi",
+  },
+  {
+    icon: Factory,
+    title: "Sənaye Enerji Auditi",
+    description: "Sənaye müəssisələri üçün enerji səmərəliliyi təhlili",
+  },
+  {
+    icon: FileSearch,
+    title: "Enerji Hesabatları",
+    description: "Detallı enerji istehlakı hesabatları və təkliflər",
+  },
+  {
+    icon: BarChart3,
+    title: "Enerji Sertifikatlaşdırma",
+    description: "Enerji performans sertifikatlarının hazırlanması",
+  },
+  {
+    icon: Lightbulb,
+    title: "Enerji Səmərəliliyi Tövsiyələri",
+    description: "Enerji qənaəti üçün praktik tövsiyələr və həllər",
+  },
+  {
+    icon: Settings,
+    title: "Enerji Hesabatları",
+    description: "Detallı enerji istehlakı hesabatları və təkliflər",
+  },
   {
     icon: ShieldCheck,
     title: "Elektrik təhlükəsizliyi",
