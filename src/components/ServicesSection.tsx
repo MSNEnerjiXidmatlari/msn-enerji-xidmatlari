@@ -1,5 +1,3 @@
-/* import { Building2, Factory, FileSearch, BarChart3, Lightbulb, Settings } from "lucide-react";
-*/
 import { ShieldCheck, Power, BatteryCharging } from "lucide-react";
 
 const services = [
@@ -18,22 +16,6 @@ const services = [
     title: "Performans yoxlanışı",
     description: "Akkumulyator-batareya sistemlərində performansın yoxlanılması",
   },
- /* {
-    icon: BarChart3,
-    title: "Enerji Hesabatları",
-    description: "Detallı enerji istehlakı hesabatları və təkliflər",
-  },
-  {
-    icon: Lightbulb,
-    title: "Səmərəlilik Tövsiyələri",
-    description: "Enerji qənaəti üçün praktik tövsiyələr və həllər",
-  },
-  {
-    icon: Settings,
-    title: "Texniki Məsləhət",
-    description: "Enerji sistemlərinin optimallaşdırılması üzrə məsləhət",
-  },
-  */
 ];
 
 const ServicesSection = () => {
