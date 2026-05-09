@@ -5,6 +5,7 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { href: "#home", label: "Əsas səhifə" },
   { href: "#services", label: "Xidmətlər" },
+  { href: "#partners", label: "Tərəfdaşlar" },
   { href: "#projects", label: "Layihələr" },
   { href: "#news", label: "Xəbərlər" },
   { href: "#careers", label: "Karyera" },

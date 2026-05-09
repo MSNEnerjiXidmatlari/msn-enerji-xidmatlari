@@ -26,7 +26,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-xl text-foreground font-medium mb-8 max-w-xl leading-relaxed">
-              Texnoloji yenilik, qabaqcıl həllər və enerjidə mükəmməllik MSN Enerji Xidmətləri MMC-də!
+              Texnoloji yenilik, qabaqcıl həllər və enerjidə mükəmməllik burada!
             </p>
 
             <p className="text-lg text-muted-foreground mb-4 max-w-xl leading-relaxed">

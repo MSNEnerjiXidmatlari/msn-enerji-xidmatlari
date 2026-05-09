@@ -1,4 +1,22 @@
-import { ShieldCheck, Power, BatteryCharging, Building2, Factory, FileSearch, BarChart3, Lightbulb, Settings } from "lucide-react";
+import { useState } from "react";
+import {
+  FileCheck,
+  BookOpenCheck,
+  ShieldCheck,
+  Power,
+  BatteryCharging,
+  Building2,
+  Factory,
+  BarChart3,
+  Settings,
+} from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const services = [
   {
@@ -12,9 +30,9 @@ const services = [
     description: "Sənaye müəssisələri üçün enerji səmərəliliyi təhlili",
   },
   {
-    icon: FileSearch,
-    title: "Enerji Hesabatları",
-    description: "Detallı enerji istehlakı hesabatları və təkliflər",
+    icon: BookOpenCheck,
+    title: "Təlimlər",
+    description: "Enerji effektivliyi istiqamətində təlimlərin keçirilməsi",
   },
   {
     icon: BarChart3,
@@ -22,14 +40,14 @@ const services = [
     description: "Enerji performans sertifikatlarının hazırlanması",
   },
   {
-    icon: Lightbulb,
-    title: "Enerji Səmərəliliyi Tövsiyələri",
-    description: "Enerji qənaəti üçün praktik tövsiyələr və həllər",
+    icon: FileCheck,
+    title: "Enerji Pasportları",
+    description: "Hesabatlar üzrə enerji pasportlarının hazırlanması",
   },
   {
     icon: Settings,
-    title: "Enerji Hesabatları",
-    description: "Detallı enerji istehlakı hesabatları və təkliflər",
+    title: "Mühəndis Xidmətləri",
+    description: "Enerji məsələlərində mühəndislik xidmətlərinin göstərilməsi",
   },
   {
     icon: ShieldCheck,
@@ -49,6 +67,17 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const [isTrainingDialogOpen, setIsTrainingDialogOpen] = useState(false);
+  const trainingItems = [
+    "Enerji menecerlərin hazırlanması və inkişaf etdirilməsi",
+    "Enerji auditorların hazırlanması və inkişafı",
+    "Enerjinin iqtisadiyyatı",
+    "ISO 50001 Enerji menecment sistemlərinin tətbiqi",
+    "Enerji performansın ölçülməsi və doğrulanması",
+    "Yaşıl Enerji Layihələrinin işlənib hazırlanması",
+    "Bərpa olunan enerji texnologiyaları",
+  ];
+
   return (
     <section id="services" className="py-20 lg:py-28 bg-muted">
       <div className="container mx-auto px-4 lg:px-8">
@@ -82,6 +111,38 @@ const ServicesSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
+              {service.title === "Təlimlər" && (
+                <Dialog
+                  open={isTrainingDialogOpen}
+                  onOpenChange={setIsTrainingDialogOpen}
+                >
+                  <DialogTrigger asChild>
+                    <button
+                      type="button"
+                      className="mt-5 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+                    >
+                      Təlimlərin siyahısı
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="sm:max-w-2xl">
+                    <DialogHeader>
+                      <DialogTitle>Təlimlərin siyahısı</DialogTitle>
+                    </DialogHeader>
+                    <ul className="space-y-3 list-disc pl-5 text-sm text-muted-foreground">
+                      {trainingItems.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                    <a
+                      href="#contact"
+                      onClick={() => setIsTrainingDialogOpen(false)}
+                      className="inline-flex items-center justify-center mt-4 px-5 py-2.5 rounded-lg gradient-bg text-primary-foreground font-medium hover:opacity-90 transition-opacity"
+                    >
+                      Təlim sifariş et
+                    </a>
+                  </DialogContent>
+                </Dialog>
+              )}
             </div>
           ))}
         </div>

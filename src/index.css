@@ -161,6 +161,14 @@
     animation: float 6s ease-in-out infinite;
   }
 
+  .partners-marquee {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    padding-inline: 1rem;
+    animation: partnersMarquee 28s linear infinite;
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -198,6 +206,15 @@
     }
     50% {
       transform: translateY(-10px);
+    }
+  }
+
+  @keyframes partnersMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
     }
   }
 }
