@@ -9,6 +9,9 @@ import {
   Factory,
   BarChart3,
   Settings,
+  CalendarDays,
+  Clock3,
+  Check,
 } from "lucide-react";
 import {
   Dialog,
@@ -69,19 +72,55 @@ const services = [
 const ServicesSection = () => {
   const [isTrainingDialogOpen, setIsTrainingDialogOpen] = useState(false);
   const trainingItems = [
-    "Enerji menecerlərin hazırlanması və inkişaf etdirilməsi",
-    "Enerji auditorların hazırlanması və inkişafı",
-    "Enerjinin iqtisadiyyatı",
-    "ISO 50001 Enerji menecment sistemlərinin tətbiqi",
-    "Enerji performansın ölçülməsi və doğrulanması",
-    "Yaşıl Enerji Layihələrinin işlənib hazırlanması",
-    "Bərpa olunan enerji texnologiyaları",
+    {
+      name: "Enerji menecerlərin hazırlanması və inkişaf etdirilməsi",
+      duration: "2 gün | 5 gün",
+      studyTime: "12.5 saat | 40 saat",
+      hasFieldTripAndWorkshops: true,
+    },
+    {
+      name: "Enerji auditorların hazırlanması və inkişafı",
+      duration: "5 gün",
+      studyTime: "40 saat",
+      hasFieldTripAndWorkshops: true,
+    },
+    {
+      name: "Enerjinin iqtisadiyyatı",
+      duration: "5 gün",
+      studyTime: "40 saat",
+      hasFieldTripAndWorkshops: true,
+    },
+    {
+      name: "ISO 50001 Enerji menecment sistemlərinin tətbiqi",
+      displayName: "İSO 50001 Enerji menecment sistemlərinin tətbiqi",
+      duration: "5 gün",
+      studyTime: "40 saat",
+      hasFieldTripAndWorkshops: true,
+    },
+    {
+      name: "Enerji performansın ölçülməsi və doğrulanması",
+      duration: "2 gün",
+      studyTime: "12 saat",
+      hasFieldTripAndWorkshops: true,
+    },
+    {
+      name: "Yaşıl Enerji Layihələrinin işlənib hazırlanması",
+      duration: "5 gün",
+      studyTime: "40 saat",
+      hasFieldTripAndWorkshops: true,
+    },
+    {
+      name: "Bərpa olunan enerji texnologiyaları",
+      displayName: "Bərpa olunan enerji texnologiyaları üzrə təlimlər",
+      duration: "5 gün",
+      studyTime: "40 saat",
+      hasFieldTripAndWorkshops: true,
+    },
   ];
 
   return (
     <section id="services" className="py-20 lg:py-28 bg-muted">
       <div className="container mx-auto px-4 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16 animate-slide-up">
           <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-semibold mb-4">
             Xidmətlər
@@ -94,7 +133,6 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
@@ -124,22 +162,62 @@ const ServicesSection = () => {
                       Təlimlərin siyahısı
                     </button>
                   </DialogTrigger>
-                  <DialogContent className="sm:max-w-2xl">
+                  <DialogContent className="sm:max-w-6xl max-h-[85vh] overflow-y-auto">
                     <DialogHeader>
                       <DialogTitle>Təlimlərin siyahısı</DialogTitle>
                     </DialogHeader>
-                    <ul className="space-y-3 list-disc pl-5 text-sm text-muted-foreground">
-                      {trainingItems.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                    <a
-                      href="#contact"
-                      onClick={() => setIsTrainingDialogOpen(false)}
-                      className="inline-flex items-center justify-center mt-4 px-5 py-2.5 rounded-lg gradient-bg text-primary-foreground font-medium hover:opacity-90 transition-opacity"
-                    >
-                      Təlim sifariş et
-                    </a>
+                    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                      {trainingItems.map((item) => {
+                        const subject = encodeURIComponent(
+                          `Təlim üçün müraciət: ${item.name}`,
+                        );
+
+                        return (
+                          <article
+                            key={item.name}
+                            className="group rounded-2xl border border-primary/10 bg-gradient-to-b from-card to-muted/40 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-primary/30"
+                          >
+                            <h4 className="min-h-12 text-base font-semibold text-foreground mb-4 leading-snug">
+                              {item.displayName ?? item.name}
+                            </h4>
+
+                            <div className="space-y-2.5 text-sm text-muted-foreground">
+                              <p className="flex items-center gap-2 rounded-lg bg-background/70 px-2.5 py-2">
+                                <Clock3 size={16} className="text-foreground/70" />
+                                <span>
+                                  Müddət: <strong className="text-foreground">{item.duration}</strong>
+                                </span>
+                              </p>
+                              <p className="flex items-center gap-2 rounded-lg bg-background/70 px-2.5 py-2">
+                                <CalendarDays size={16} className="text-foreground/70" />
+                                <span>
+                                  Tədris vaxtı:{" "}
+                                  <strong className="text-foreground">{item.studyTime}</strong>
+                                </span>
+                              </p>
+                              <p className="flex items-start gap-2 rounded-lg bg-background/70 px-2.5 py-2">
+                                <Check size={16} className="mt-0.5 text-green-600" />
+                                <span>
+                                  Sahə səfərləri və praktiki seminarlar{" "}
+                                  <strong
+                                    className="ml-1 inline-block rounded-md px-2 py-0.5 text-xs bg-green-100 text-green-700"
+                                  >
+                                    {item.hasFieldTripAndWorkshops ? "mövcuddur" : "mövcud deyil"}
+                                  </strong>
+                                </span>
+                              </p>
+                            </div>
+
+                            <a
+                              href={`mailto:office@msnenerji.az?subject=${subject}`}
+                              className="inline-flex w-full items-center justify-center mt-5 px-4 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold shadow-sm transition-all duration-300 hover:bg-primary/90 hover:shadow-md group-hover:scale-[1.01]"
+                            >
+                              Təlim üçün müraciət et
+                            </a>
+                          </article>
+                        );
+                      })}
+                    </div>
                   </DialogContent>
                 </Dialog>
               )}
@@ -147,7 +225,6 @@ const ServicesSection = () => {
           ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center mt-12">
           <a
             href="#contact"

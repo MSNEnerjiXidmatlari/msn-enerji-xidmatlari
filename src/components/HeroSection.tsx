@@ -4,14 +4,14 @@ import logo from "@/assets/logo.png";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center bg-muted overflow-hidden">
+    <section id="home" className="relative min-h-[85vh] flex items-center bg-muted overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 lg:px-8 py-16 lg:py-24 relative z-10">
+      <div className="container mx-auto px-4 lg:px-8 py-10 lg:py-16 relative z-10">
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Content */}
           <div className="animate-slide-up">
